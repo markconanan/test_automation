@@ -1,18 +1,18 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
 import LoginPage from "../../pages/LoginPage";
 import InventoryPage from "../../pages/inventoryPage";
 import CartPage from "../../pages/cartPage";
 
-const URL = "https://www.saucedemo.com/";
 let loginPage: LoginPage;
 let inventoryPage: InventoryPage;
 let cartPage: CartPage;
 
 test.beforeEach(async ({ page }) => {
-  await page.goto(URL);
+  await page.goto("/");
   loginPage = new LoginPage(page);
   inventoryPage = new InventoryPage(page);
   await loginPage.loginWithCredentials("standard_user", "secret_sauce");
+  await loginPage.verifySuccessfulLogin();
 });
 
 test("TC03A - Add First 2 Items to Cart", async ({ page }) => {

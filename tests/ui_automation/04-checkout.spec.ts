@@ -1,11 +1,10 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
 import LoginPage from "../../pages/LoginPage";
 import InventoryPage from "../../pages/inventoryPage";
 import CartPage from "../../pages/cartPage";
 import CheckoutPage1 from "../../pages/checkoutPage1";
 import CheckoutPage2 from "../../pages/checkoutPage2";
 
-const URL = "https://www.saucedemo.com/";
 let loginPage: LoginPage;
 let inventoryPage: InventoryPage;
 let cartPage: CartPage;
@@ -13,10 +12,11 @@ let checkoutPage1: CheckoutPage1;
 let checkoutPage2: CheckoutPage2;
 
 test.beforeEach(async ({ page }) => {
-  await page.goto(URL);
+  await page.goto("/");
   loginPage = new LoginPage(page);
   inventoryPage = new InventoryPage(page);
   await loginPage.loginWithCredentials("standard_user", "secret_sauce");
+  await loginPage.verifySuccessfulLogin();
 });
 
 test("TC04A - Verify Checkout Journey", async ({ page }) => {

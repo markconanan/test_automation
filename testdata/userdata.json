@@ -1,0 +1,7 @@
+{
+    "standard_username":"standard_user",
+    "standard_pw":"secret_sauce",
+    "lo_username":"locked_out_user",
+    "lo_pw":"secret_sauce"
+
+}
