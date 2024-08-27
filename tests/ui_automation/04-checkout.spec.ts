@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import LoginPage from "../../pages/LoginPage";
+import LoginPage from "../../pages/loginPageoginPage";
 import InventoryPage from "../../pages/inventoryPage";
 import CartPage from "../../pages/cartPage";
 import CheckoutPage1 from "../../pages/checkoutPage1";
