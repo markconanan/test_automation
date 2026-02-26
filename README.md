@@ -1,6 +1,6 @@
 # SauceLabs UI Automation
 
-This repo contains a Playwright UI automation framework for SauceLabs
+This repo contains a Playwright UI automation framework for SauceLabs.
 
 # Requirements
 
